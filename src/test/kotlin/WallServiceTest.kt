@@ -1,3 +1,5 @@
+package ru.netology.dz2_3_attachments
+
 import org.junit.Test
 
 import org.junit.Assert.*

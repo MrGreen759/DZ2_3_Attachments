@@ -1,3 +1,5 @@
+package ru.netology.dz2_3_attachments
+
 fun main(args: Array<String>) {
 
     // создаем пост 1
@@ -29,7 +31,10 @@ fun main(args: Array<String>) {
         likes = newLike,
         postSource = newPostSource,
         reposts = newRepostsInfo,
-        views = 144)
+        views = 144,
+        attachments = arrayOf(GiftAttachment(Gift(1, "t1", "t2", "t3")),
+                        GraffityAttachment(Graffity(1, 2, "url", 400, 400)))
+        )
     WallService.addPost(newPost)
     WallService.printPosts()
 
@@ -74,7 +79,8 @@ data class Post (
     val isAds: Boolean = false,         // реклама ли
     val isFavorite: Boolean = false,            // в закладках ли
     val donut: Donut? = null,                   // VK Donut
-    val postponed: Boolean = false      // отложенный пост
+    val postponed: Boolean = false,      // отложенный пост
+    val attachments: Array<Attachment> = emptyArray()   // вложения
 )
 
 data class Comment (
